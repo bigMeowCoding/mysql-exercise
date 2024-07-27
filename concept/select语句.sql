@@ -1,5 +1,3 @@
-use sql_store;
-
 # select *
 # from sql_store.customers
 # where state <> 'VA';
@@ -23,4 +21,8 @@ use sql_store;
 # select order_id, ifnull( shipper_id,'not assigned') as shipper
 # from orders;
 
-select  order_id, coalesce(shipper_id,comments,'not assigned') from orders
+# select  order_id, coalesce(shipper_id,comments,'not assigned') from orders
+
+
+select *
+from sales_by_client where total_sales> 800
