@@ -25,4 +25,5 @@
 
 
 select *
-from sales_by_client where total_sales> 800
+from client_balance;
+
