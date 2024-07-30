@@ -24,6 +24,7 @@
 # select  order_id, coalesce(shipper_id,comments,'not assigned') from orders
 
 
-select *
-from client_balance;
+# select *
+# from client_balance;
 
+call get_clients()
