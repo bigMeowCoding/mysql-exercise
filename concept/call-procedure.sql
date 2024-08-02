@@ -1,1 +1,1 @@
-# call getClientsByState('CA');
+call getClientsByState(null);
