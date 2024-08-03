@@ -1,2 +1,4 @@
-# call getClientsByState(null);
-call updateInvoices(2, 20, '2020-01-01');
+set @invoiceCount = 0;
+set @invoiceTotal = 0;
+call getClientUnpaidInvoices(3, @invoiceCount, @invoiceTotal);
+select @invoiceCount, @invoiceTotal;
