@@ -1,4 +1,6 @@
-set @invoiceCount = 0;
-set @invoiceTotal = 0;
-call getClientUnpaidInvoices(3, @invoiceCount, @invoiceTotal);
-select @invoiceCount, @invoiceTotal;
+# set @invoiceCount = 0;
+# set @invoiceTotal = 0;
+# call getClientUnpaidInvoices(3, @invoiceCount, @invoiceTotal);
+# select @invoiceCount, @invoiceTotal;
+
+call get_risk_factor()

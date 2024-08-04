@@ -27,12 +27,26 @@
 #     where i.invoice_id = invoiceId;
 # end;
 # 存储过程带返回值
-drop procedure if exists getClientUnpaidInvoices;
-create procedure getClientUnpaidInvoices(clientId int,out invoiceCount int, out invoiceTotal decimal(10, 2))
+# drop procedure if exists getClientUnpaidInvoices;
+# create procedure getClientUnpaidInvoices(clientId int,out invoiceCount int, out invoiceTotal decimal(10, 2))
+# begin
+#     select count(*), sum(invoice_total)
+#     into invoiceCount, invoiceTotal
+#     from invoices i
+#     where i.client_id = clientId
+#       and i.payment_total = 0;
+# end;
+
+# 变量
+drop procedure if exists get_risk_factor;
+create procedure get_risk_factor()
 begin
+    declare riskFactor decimal(10, 2) default 0;
+    declare invoiceTotal decimal(10, 2);
+    declare invoiceCount int;
     select count(*), sum(invoice_total)
     into invoiceCount, invoiceTotal
-    from invoices i
-    where i.client_id = clientId
-      and i.payment_total = 0;
+    from invoices;
+    set riskFactor = invoiceTotal / invoiceCount * 5;
+    select riskFactor;
 end;
