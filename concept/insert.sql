@@ -35,7 +35,12 @@
 # select *
 # from orders
 # where order_date > '2019-01-01';
-insert into invoices
-(invoice_id, number, client_id, invoice_total, invoice_date, due_date, payment_date)
-values (20, 2, 2, 200, '2019-01-02', '2019-02-02', null),
-       (21, 3, 2, 300, '2019-01-03', '2019-02-03', null);
+# insert into invoices
+# (invoice_id, number, client_id, invoice_total, invoice_date, due_date, payment_date)
+# values (20, 2, 2, 200, '2019-01-02', '2019-02-02', null),
+#        (21, 3, 2, 300, '2019-01-03', '2019-02-03', null);
+
+insert into payments (payment_id, client_id, invoice_id, date, amount, payment_method)
+values (default, 1, 4, '2019-01-01', 100, 1),
+       (default, 2, 5, '2019-01-02', 200, 2),
+       (default, 3, 3, '2019-01-03', 300, 1);

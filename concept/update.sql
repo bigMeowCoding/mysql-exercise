@@ -19,6 +19,6 @@
 --     payment_date=due_date
 -- where payment_date is null;
 
-update client_balance
-set payment_total = invoice_total
-where invoice_id = 2;
+# update client_balance
+# set payment_total = invoice_total
+# where invoice_id = 2;
