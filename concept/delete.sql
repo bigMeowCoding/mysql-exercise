@@ -11,4 +11,4 @@
 
 delete
 from payments
-where payment_id = 8;
+where payment_id >= 9;

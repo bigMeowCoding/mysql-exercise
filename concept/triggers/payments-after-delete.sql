@@ -10,4 +10,6 @@ begin
                               else i.payment_total - OLD.amount
         end
     where i.invoice_id = OLD.invoice_id;
+    insert into payments_audit
+    values (OLD.client_id, OLD.date, OLD.amount, 'delete', now());
 end;
