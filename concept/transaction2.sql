@@ -5,6 +5,7 @@ start transaction;
 # insert into order_items(order_id, product_id, quantity, unit_price)
 # values (LAST_INSERT_ID(), 1, 10, 10);
 update customers
-set points = points + 100
-where customer_id = 1;
-commit;
+set points = 0
+where customer_id = 2;
+
+commit
